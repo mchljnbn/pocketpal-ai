@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Matches the RN dark theme background -->
+    <color name="pp_app_background">#000000</color>
+    <color name="pp_brand_accent">#8E82FF</color>
+</resources>

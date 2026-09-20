@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Smart-assistant orb: soft pink / violet / orange gradient sphere with two
+  glowing rounded-triangle eyes. 288dp canvas so it fits the Android 12 splash
+  icon mask (the visible circle is 192dp; everything here stays inside r=96).
+  VectorDrawable cannot blur, so the glow is built from stacked radial
+  gradients (sphere) and translucent wide strokes (eyes).
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="288dp"
+    android:height="288dp"
+    android:viewportWidth="288"
+    android:viewportHeight="288">
+
+    <group
+        android:name="orb_group"
+        android:pivotX="144"
+        android:pivotY="144">
+
+        <!-- Soft outer halo -->
+        <path android:pathData="M144,144m-94,0a94,94 0,1 1,188 0a94,94 0,1 1,-188 0">
+            <aapt:attr name="android:fillColor">
+                <gradient
+                    android:type="radial"
+                    android:centerX="144"
+                    android:centerY="144"
+                    android:gradientRadius="94">
+                    <item android:offset="0.0" android:color="#66B87CF5" />
+                    <item android:offset="0.72" android:color="#3DC58BF5" />
+                    <item android:offset="1.0" android:color="#00C58BF5" />
+                </gradient>
+            </aapt:attr>
+        </path>
+
+        <!-- Base sphere: pink core fading to violet edge -->
+        <path android:pathData="M144,144m-72,0a72,72 0,1 1,144 0a72,72 0,1 1,-144 0">
+            <aapt:attr name="android:fillColor">
+                <gradient
+                    android:type="radial"
+                    android:centerX="144"
+                    android:centerY="144"
+                    android:gradientRadius="72">
+                    <item android:offset="0.0" android:color="#F4B6EC" />
+                    <item android:offset="0.55" android:color="#E46FD3" />
+                    <item android:offset="1.0" android:color="#A277F2" />
+                </gradient>
+            </aapt:attr>
+        </path>
+
+        <!-- Top lavender-blue wash -->
+        <path android:pathData="M144,144m-72,0a72,72 0,1 1,144 0a72,72 0,1 1,-144 0">
+            <aapt:attr name="android:fillColor">
+                <gradient
+                    android:type="radial"
+                    android:centerX="168"
+                    android:centerY="96"
+                    android:gradientRadius="62">
+                    <item android:offset="0.0" android:color="#C9C4FF" />
+                    <item android:offset="1.0" android:color="#00C9C4FF" />
+                </gradient>
+            </aapt:attr>
+        </path>
+
+        <!-- Bottom-left orange glow -->
+        <path android:pathData="M144,144m-72,0a72,72 0,1 1,144 0a72,72 0,1 1,-144 0">
+            <aapt:attr name="android:fillColor">
+                <gradient
+                    android:type="radial"
+                    android:centerX="112"
+                    android:centerY="196"
+                    android:gradientRadius="72">
+                    <item android:offset="0.0" android:color="#FFA45C" />
+                    <item android:offset="1.0" android:color="#00FFA45C" />
+                </gradient>
+            </aapt:attr>
+        </path>
+
+        <!-- Bottom-right violet depth -->
+        <path android:pathData="M144,144m-72,0a72,72 0,1 1,144 0a72,72 0,1 1,-144 0">
+            <aapt:attr name="android:fillColor">
+                <gradient
+                    android:type="radial"
+                    android:centerX="192"
+                    android:centerY="186"
+                    android:gradientRadius="58">
+                    <item android:offset="0.0" android:color="#8A63F2" />
+                    <item android:offset="1.0" android:color="#008A63F2" />
+                </gradient>
+            </aapt:attr>
+        </path>
+
+        <!-- Top-left specular highlight -->
+        <path android:pathData="M144,144m-72,0a72,72 0,1 1,144 0a72,72 0,1 1,-144 0">
+            <aapt:attr name="android:fillColor">
+                <gradient
+                    android:type="radial"
+                    android:centerX="118"
+                    android:centerY="102"
+                    android:gradientRadius="46">
+                    <item android:offset="0.0" android:color="#70FFFFFF" />
+                    <item android:offset="1.0" android:color="#00FFFFFF" />
+                </gradient>
+            </aapt:attr>
+        </path>
+
+        <!-- Eyes: two rounded triangles with layered glow -->
+        <group
+            android:name="eyes_group"
+            android:pivotX="144"
+            android:pivotY="138">
+            <path
+                android:pathData="M124,124 C126,124 127.5,125.5 128.5,127.5 L134,146 C135,149 133,151 130,151 L118,151 C115,151 113,149 114,146 L119.5,127.5 C120.5,125.5 122,124 124,124 Z M164,124 C166,124 167.5,125.5 168.5,127.5 L174,146 C175,149 173,151 170,151 L158,151 C155,151 153,149 154,146 L159.5,127.5 C160.5,125.5 162,124 164,124 Z"
+                android:strokeColor="#40FFFFFF"
+                android:strokeWidth="16"
+                android:strokeLineJoin="round" />
+            <path
+                android:pathData="M124,124 C126,124 127.5,125.5 128.5,127.5 L134,146 C135,149 133,151 130,151 L118,151 C115,151 113,149 114,146 L119.5,127.5 C120.5,125.5 122,124 124,124 Z M164,124 C166,124 167.5,125.5 168.5,127.5 L174,146 C175,149 173,151 170,151 L158,151 C155,151 153,149 154,146 L159.5,127.5 C160.5,125.5 162,124 164,124 Z"
+                android:strokeColor="#73FFFFFF"
+                android:strokeWidth="8"
+                android:strokeLineJoin="round" />
+            <path
+                android:pathData="M124,124 C126,124 127.5,125.5 128.5,127.5 L134,146 C135,149 133,151 130,151 L118,151 C115,151 113,149 114,146 L119.5,127.5 C120.5,125.5 122,124 124,124 Z M164,124 C166,124 167.5,125.5 168.5,127.5 L174,146 C175,149 173,151 170,151 L158,151 C155,151 153,149 154,146 L159.5,127.5 C160.5,125.5 162,124 164,124 Z"
+                android:fillColor="#FFFFFF"
+                android:strokeColor="#FFFFFF"
+                android:strokeWidth="2"
+                android:strokeLineJoin="round" />
+        </group>
+
+    </group>
+</vector>

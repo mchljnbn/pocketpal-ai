@@ -1,9 +1,30 @@
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+    <!-- Shared base theme. AppTheme (below and in values-v31) extends this. -->
+    <style name="PPBaseTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="android:editTextBackground">@drawable/rn_edit_text_material</item>
+
+        <!-- Solid window background so there is no white/black flash on launch,
+             keyboard resize or rotation. Follows light/dark automatically. -->
+        <item name="android:windowBackground">@color/pp_app_background</item>
+
+        <!-- Purple caret, text-selection handles and native control tint -->
+        <item name="colorAccent">@color/pp_brand_accent</item>
+        <item name="colorControlActivated">@color/pp_brand_accent</item>
+
+        <!-- Soft fade + subtle scale when the window opens/closes -->
+        <item name="android:windowAnimationStyle">@style/PPWindowAnimation</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="PPBaseTheme" />
+
+    <style name="PPWindowAnimation" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/pp_enter</item>
+        <item name="android:activityOpenExitAnimation">@anim/pp_exit</item>
+        <item name="android:activityCloseEnterAnimation">@anim/pp_enter</item>
+        <item name="android:activityCloseExitAnimation">@anim/pp_exit</item>
     </style>
 
 </resources>

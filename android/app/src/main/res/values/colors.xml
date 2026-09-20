@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Matches the RN light theme background (src/theme/tokens/colors.ts) -->
+    <color name="pp_app_background">#FFFFFF</color>
+    <!-- Indigo accent from the reference UI (send button / "Smart Assistant" text) -->
+    <color name="pp_brand_accent">#6C5CE7</color>
+</resources>

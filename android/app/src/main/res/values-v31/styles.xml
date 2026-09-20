@@ -1,0 +1,11 @@
+<resources>
+
+    <!-- Android 12+: animated orb splash screen. Older versions keep the
+         plain themed background from PPBaseTheme. -->
+    <style name="AppTheme" parent="PPBaseTheme">
+        <item name="android:windowSplashScreenBackground">@color/pp_app_background</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/splash_orb_animated</item>
+        <item name="android:windowSplashScreenAnimationDuration">800</item>
+    </style>
+
+</resources>
