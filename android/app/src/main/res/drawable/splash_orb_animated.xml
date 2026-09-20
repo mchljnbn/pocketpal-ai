@@ -31,7 +31,7 @@
 
     <target android:name="eyes_group">
         <aapt:attr name="android:animation">
-            <set android:ordering="sequential">
+            <set android:ordering="sequentially">
                 <objectAnimator
                     android:propertyName="scaleY"
                     android:valueFrom="1.0"
